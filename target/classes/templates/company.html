@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Example</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Table Example</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="company : ${companyList}">
+                <td th:text="${company.getCompanyName()}"></td>
+                <td th:text="${company.getEmail()}"></td>
+             <td th:text="${company.getPhoneNumber()}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
